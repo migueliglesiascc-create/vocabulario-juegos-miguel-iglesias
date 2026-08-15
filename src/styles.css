@@ -47,7 +47,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid rgba(14, 165, 233, .3
 
 .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(370px, .95fr); gap: clamp(40px, 7vw, 92px); align-items: center; min-height: 660px; padding: 126px clamp(30px, 6vw, 76px) 72px; overflow: hidden; border: 1px solid rgba(158, 201, 229, .63); border-radius: 34px; background: var(--surface); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
 .hero-decoration { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.corner-disc { fill: #c9f0fc; fill-opacity: .42; }
+.corner-disc { fill: #91d9f4; fill-opacity: .5; }
 .corner-ring { fill: none; stroke: #18a4dc; stroke-width: 126; stroke-opacity: .9; }
 :root[data-theme="dark"] .corner-disc { fill: #8edcf4; fill-opacity: .2; }
 :root[data-theme="dark"] .corner-ring { stroke-opacity: .62; }
@@ -56,6 +56,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid rgba(14, 165, 233, .3
 .hero-copy { position: relative; z-index: 1; }
 .eyebrow { margin: 0 0 14px; color: var(--blue-dark); font-size: .76rem; font-weight: 900; letter-spacing: .16em; }
 h1 { max-width: 700px; margin: 0; font-size: clamp(3.2rem, 6.2vw, 6rem); line-height: .91; letter-spacing: -.065em; }
+.hero h1 { color: #24517d; }
+:root[data-theme="dark"] .hero h1 { color: #91cfff; }
 .hero-subtitle { max-width: 670px; margin: 25px 0 34px; color: var(--muted); font-size: clamp(1.02rem, 1.7vw, 1.24rem); line-height: 1.65; }
 .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .entry-card { display: grid; grid-template-columns: auto 1fr; gap: 13px; align-items: start; min-height: 190px; padding: 20px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface-solid); box-shadow: 0 10px 28px rgba(31, 74, 108, .08); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
@@ -68,7 +70,7 @@ h1 { max-width: 700px; margin: 0; font-size: clamp(3.2rem, 6.2vw, 6rem); line-he
 .student-card .entry-link { background: linear-gradient(135deg, #257bd0, #315bd1); }
 
 .hero-visual { position: relative; z-index: 1; display: grid; min-height: 440px; place-items: center; }
-.vocabulary-illustration { display: block; width: 126%; max-width: 650px; height: auto; filter: drop-shadow(0 28px 34px rgba(12, 43, 82, .2)); }
+.vocabulary-illustration { display: block; width: 126%; max-width: 650px; height: auto; filter: brightness(1.24) saturate(.92) drop-shadow(0 28px 34px rgba(36, 81, 125, .18)); }
 .visual-card { position: absolute; border-radius: 30px; box-shadow: 0 25px 55px rgba(15, 54, 91, .18); }
 .card-back-one, .card-back-two { display: grid; width: 250px; height: 160px; place-items: center; color: #fff; font-size: 2rem; font-weight: 900; }
 .card-back-one { right: 10px; top: 28px; transform: rotate(9deg); background: linear-gradient(135deg, #18345f, #091a36); }
