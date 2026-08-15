@@ -99,6 +99,10 @@ export function App() {
       </nav>
 
       <section className="hero" id="top">
+        <svg className="hero-decoration" viewBox="0 0 1200 610" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <circle className="corner-disc" cx="-80" cy="-70" r="180" />
+          <circle className="corner-ring" cx="1110" cy="610" r="390" />
+        </svg>
         <div className="hero-copy">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
