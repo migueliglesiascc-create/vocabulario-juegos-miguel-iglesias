@@ -84,10 +84,6 @@ export function App() {
   return (
     <main className="site-shell">
       <nav className="topbar" aria-label={language === 'es' ? 'Controles de la aplicación' : 'Application controls'}>
-        <a className="brand-mark" href="#top" aria-label={t.title}>
-          <img className="brand-logo" src={`${import.meta.env.BASE_URL}miguel-iglesias-logo.png`} alt="Miguel Iglesias" />
-          <span className="brand-name">JV</span>
-        </a>
         <div className="topbar-actions">
           <button className="utility-button" type="button" onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} aria-label={language === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'}>
             <Languages size={18} /> {language === 'es' ? 'EN' : 'ES'}
@@ -103,6 +99,9 @@ export function App() {
           <circle className="corner-disc" cx="-80" cy="-70" r="180" />
           <circle className="corner-ring" cx="1110" cy="610" r="390" />
         </svg>
+        <a className="hero-brand" href="#top" aria-label={t.title}>
+          <img src={`${import.meta.env.BASE_URL}miguel-iglesias-logo.png`} alt="Miguel Iglesias" />
+        </a>
         <div className="hero-copy">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
