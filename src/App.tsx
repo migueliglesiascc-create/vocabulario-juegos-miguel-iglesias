@@ -9,9 +9,12 @@ import {
   Image as ImageIcon,
   Languages,
   Moon,
+  MousePointerClick,
   Puzzle,
+  Route,
   Shapes,
   Sun,
+  Trophy,
   UserRound,
   UsersRound,
 } from 'lucide-react'
@@ -31,9 +34,16 @@ const copy = {
     student: 'Soy estudiante',
     studentText: 'Entra con el enlace o código de tu sesión y comienza a jugar.',
     enter: 'Entrar',
-    modulesEyebrow: 'UNA PLATAFORMA · MUCHAS FORMAS DE APRENDER',
-    modulesTitle: 'Elige cómo practicar',
-    modulesText: 'Cada lección podrá combinar distintos juegos con el mismo vocabulario.',
+    modulesEyebrow: 'EL PROFESOR PREPARA · LA CLASE JUEGA',
+    modulesTitle: 'El profesor elige cómo jugará la clase',
+    modulesText: 'En una competición o circuito, todos trabajan con los mismos juegos y condiciones. La práctica libre queda separada de la clasificación.',
+    competition: 'Competición',
+    competitionText: 'Un mismo módulo y las mismas condiciones para toda la clase.',
+    circuit: 'Circuito',
+    circuitText: 'Los mismos módulos, el mismo orden y una puntuación normalizada.',
+    freePractice: 'Práctica libre',
+    freePracticeText: 'El estudiante elige para repasar, sin afectar al leaderboard.',
+    catalog: 'Catálogo de juegos',
     available: 'Disponible en la primera versión',
     soon: 'Próximamente',
     footer: '2026 · Diseñado por Miguel Iglesias',
@@ -48,9 +58,16 @@ const copy = {
     student: 'I am a student',
     studentText: 'Join with your session link or code and start playing.',
     enter: 'Enter',
-    modulesEyebrow: 'ONE PLATFORM · MANY WAYS TO LEARN',
-    modulesTitle: 'Choose how to practice',
-    modulesText: 'Each lesson can combine different games using the same vocabulary.',
+    modulesEyebrow: 'THE TEACHER PREPARES · THE CLASS PLAYS',
+    modulesTitle: 'The teacher chooses how the class will play',
+    modulesText: 'In a competition or circuit, everyone uses the same games and settings. Free practice stays separate from the leaderboard.',
+    competition: 'Competition',
+    competitionText: 'One module and the same conditions for the whole class.',
+    circuit: 'Circuit',
+    circuitText: 'The same modules, the same order, and normalized scoring.',
+    freePractice: 'Free practice',
+    freePracticeText: 'Students choose what to review without affecting the leaderboard.',
+    catalog: 'Game catalog',
     available: 'Available in the first release',
     soon: 'Coming soon',
     footer: '2026 · Designed by Miguel Iglesias',
@@ -68,6 +85,7 @@ const modules = [
   { key: 'multiple', es: 'Opción múltiple', en: 'Multiple choice', icon: CircleHelp, tone: 'blue', ready: true },
   { key: 'listen', es: 'Escuchar y seleccionar', en: 'Listen and select', icon: Headphones, tone: 'pink', ready: false },
   { key: 'categories', es: 'Clasificar por categorías', en: 'Sort by category', icon: Shapes, tone: 'teal', ready: false },
+  { key: 'whack', es: 'Golpea la palabra', en: 'Whack the Word', icon: MousePointerClick, tone: 'sky', ready: false },
 ]
 
 export function App() {
@@ -140,6 +158,21 @@ export function App() {
           <h2 id="modules-heading">{t.modulesTitle}</h2>
           <p>{t.modulesText}</p>
         </header>
+        <div className="session-modes">
+          <article className="mode-card">
+            <span className="mode-icon"><Trophy size={23} /></span>
+            <div><h3>{t.competition}</h3><p>{t.competitionText}</p></div>
+          </article>
+          <article className="mode-card">
+            <span className="mode-icon"><Route size={23} /></span>
+            <div><h3>{t.circuit}</h3><p>{t.circuitText}</p></div>
+          </article>
+          <article className="mode-card">
+            <span className="mode-icon"><UserRound size={23} /></span>
+            <div><h3>{t.freePractice}</h3><p>{t.freePracticeText}</p></div>
+          </article>
+        </div>
+        <h3 className="catalog-heading">{t.catalog}</h3>
         <div className="module-grid">
           {modules.map((module) => {
             const Icon = module.icon
