@@ -39,8 +39,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid rgba(14, 165, 233, .3
 
 .site-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 20px 0 30px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; min-height: 62px; }
-.brand-mark { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 900; text-decoration: none; }
-.brand-orbit { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 15px; color: #fff; background: linear-gradient(135deg, var(--cyan), #2563eb); box-shadow: 0 10px 22px rgba(25, 118, 210, .23); }
+.brand-mark { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 900; text-decoration: none; }
+.brand-logo { width: 52px; height: 52px; object-fit: contain; border-radius: 50%; filter: drop-shadow(0 7px 12px rgba(25, 118, 210, .16)); }
+.brand-name { font-size: 1rem; letter-spacing: .05em; }
 .topbar-actions { display: flex; align-items: center; gap: 9px; }
 .utility-button, .icon-button { display: inline-flex; height: 42px; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--surface); font-weight: 800; cursor: pointer; box-shadow: 0 5px 15px rgba(32, 72, 108, .07); }
 .utility-button { padding: 0 14px; }
@@ -93,6 +94,7 @@ h1 { max-width: 700px; margin: 0; font-size: clamp(3.2rem, 6.2vw, 6rem); line-he
 .status-pill.ready { color: #08718b; background: rgba(20, 184, 166, .13); }
 .tone-cyan { --tone: #0e9db5; }.tone-emerald { --tone: #159a6d; }.tone-violet { --tone: #7654d9; }.tone-amber { --tone: #c78516; }.tone-indigo { --tone: #4858c8; }.tone-coral { --tone: #d96955; }.tone-blue { --tone: #2873d1; }.tone-pink { --tone: #c64b87; }.tone-teal { --tone: #168b88; }
 footer { padding: 27px 12px 10px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .82rem; }
+.copyleft { display: inline-block; color: var(--ink); font-size: 1.02em; font-weight: 800; transform: scaleX(-1); }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding: 62px 40px; }

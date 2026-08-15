@@ -12,7 +12,6 @@ import {
   Moon,
   Puzzle,
   Shapes,
-  Sparkles,
   Sun,
   UserRound,
   UsersRound,
@@ -36,7 +35,7 @@ const copy = {
     modulesText: 'Cada lección podrá combinar distintos juegos con el mismo vocabulario.',
     available: 'Disponible en la primera versión',
     soon: 'Próximamente',
-    footer: '© 2026 · Un juego diseñado por Miguel Iglesias',
+    footer: '2026 · Diseñado por Miguel Iglesias',
     preview: 'Vista previa del catálogo',
   },
   en: {
@@ -53,7 +52,7 @@ const copy = {
     modulesText: 'Each lesson can combine different games using the same vocabulary.',
     available: 'Available in the first release',
     soon: 'Coming soon',
-    footer: '© 2026 · A game designed by Miguel Iglesias',
+    footer: '2026 · Designed by Miguel Iglesias',
     preview: 'Module catalog preview',
   },
 }
@@ -86,8 +85,8 @@ export function App() {
     <main className="site-shell">
       <nav className="topbar" aria-label={language === 'es' ? 'Controles de la aplicación' : 'Application controls'}>
         <a className="brand-mark" href="#top" aria-label={t.title}>
-          <span className="brand-orbit"><Sparkles size={21} /></span>
-          <span>JV</span>
+          <img className="brand-logo" src={`${import.meta.env.BASE_URL}miguel-iglesias-logo.png`} alt="Miguel Iglesias" />
+          <span className="brand-name">JV</span>
         </a>
         <div className="topbar-actions">
           <button className="utility-button" type="button" onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} aria-label={language === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'}>
@@ -153,7 +152,7 @@ export function App() {
         </div>
       </section>
 
-      <footer>{t.footer}</footer>
+      <footer><span className="copyleft" aria-label={language === 'es' ? 'Copyleft' : 'Copyleft'}>©</span> {t.footer}</footer>
     </main>
   )
 }
