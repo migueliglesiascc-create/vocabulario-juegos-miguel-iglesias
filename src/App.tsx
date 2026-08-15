@@ -15,9 +15,11 @@ import {
   UserRound,
   UsersRound,
 } from 'lucide-react'
+import { StudentAccess, TeacherAccess } from './components/AccessPanels'
 
 type Language = 'es' | 'en'
 type Theme = 'light' | 'dark'
+type View = 'home' | 'teacher' | 'student'
 
 const copy = {
   es: {
@@ -71,6 +73,7 @@ const modules = [
 export function App() {
   const [language, setLanguage] = useState<Language>(() => (localStorage.getItem('vocab-language') as Language) || 'es')
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('vocab-theme') as Theme) || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+  const [view, setView] = useState<View>(() => new URLSearchParams(window.location.search).has('session') ? 'student' : 'home')
   const t = useMemo(() => copy[language], [language])
 
   useEffect(() => {
@@ -79,6 +82,11 @@ export function App() {
     localStorage.setItem('vocab-theme', theme)
     localStorage.setItem('vocab-language', language)
   }, [theme, language])
+
+  function returnHome() {
+    window.history.replaceState({}, '', window.location.pathname)
+    setView('home')
+  }
 
   return (
     <main className="site-shell">
@@ -93,6 +101,10 @@ export function App() {
         </div>
       </nav>
 
+      {view === 'teacher' && <TeacherAccess language={language} onBack={returnHome} />}
+      {view === 'student' && <StudentAccess language={language} onBack={returnHome} />}
+
+      {view === 'home' && <>
       <section className="hero" id="top">
         <svg className="hero-decoration" viewBox="0 0 1200 610" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <circle className="corner-disc" cx="-70" cy="-60" r="310" />
@@ -109,12 +121,12 @@ export function App() {
             <article className="entry-card teacher-card">
               <span className="entry-icon"><UserRound size={26} /></span>
               <div><h2>{t.teacher}</h2><p>{t.teacherText}</p></div>
-              <button type="button" className="entry-link">{t.enter}<ArrowRight size={17} /></button>
+              <button type="button" className="entry-link" onClick={() => setView('teacher')}>{t.enter}<ArrowRight size={17} /></button>
             </article>
             <article className="entry-card student-card">
               <span className="entry-icon"><UsersRound size={26} /></span>
               <div><h2>{t.student}</h2><p>{t.studentText}</p></div>
-              <button type="button" className="entry-link">{t.enter}<ArrowRight size={17} /></button>
+              <button type="button" className="entry-link" onClick={() => setView('student')}>{t.enter}<ArrowRight size={17} /></button>
             </article>
           </div>
         </div>
@@ -141,6 +153,7 @@ export function App() {
           })}
         </div>
       </section>
+      </>}
 
       <footer><span className="copyleft" aria-label={language === 'es' ? 'Copyleft' : 'Copyleft'}>©</span> {t.footer}</footer>
     </main>
