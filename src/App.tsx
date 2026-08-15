@@ -108,12 +108,12 @@ export function App() {
           <p className="hero-subtitle">{t.subtitle}</p>
           <div className="entry-grid">
             <article className="entry-card teacher-card">
-              <span className="entry-icon"><UsersRound size={26} /></span>
+              <span className="entry-icon"><UserRound size={26} /></span>
               <div><h2>{t.teacher}</h2><p>{t.teacherText}</p></div>
               <button type="button" className="entry-link">{t.enter}<ArrowRight size={17} /></button>
             </article>
             <article className="entry-card student-card">
-              <span className="entry-icon"><UserRound size={26} /></span>
+              <span className="entry-icon"><UsersRound size={26} /></span>
               <div><h2>{t.student}</h2><p>{t.studentText}</p></div>
               <button type="button" className="entry-link">{t.enter}<ArrowRight size={17} /></button>
             </article>
