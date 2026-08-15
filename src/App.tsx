@@ -8,7 +8,6 @@ import {
   Headphones,
   Image as ImageIcon,
   Languages,
-  LayoutDashboard,
   Moon,
   Puzzle,
   Shapes,
@@ -120,18 +119,12 @@ export function App() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-hidden="true">
-          <div className="visual-card card-back-one"><span>hola</span></div>
-          <div className="visual-card card-back-two"><span>hello</span></div>
-          <div className="visual-card card-front">
-            <div className="mini-header"><LayoutDashboard size={18} /><span>{t.preview}</span></div>
-            <div className="mini-board">
-              <span className="mini-word spanish">la aventura</span>
-              <span className="mini-link"></span>
-              <span className="mini-word english">adventure</span>
-            </div>
-            <div className="mini-progress"><span></span></div>
-          </div>
+        <div className="hero-visual">
+          <img
+            className="vocabulary-illustration"
+            src={`${import.meta.env.BASE_URL}vocabulary-games-illustration.png`}
+            alt={language === 'es' ? 'Juego bilingüe para emparejar palabras nuevas, escuchar, resolver retos y avanzar' : 'Bilingual game for matching new words, listening, solving challenges, and making progress'}
+          />
         </div>
       </section>
 
