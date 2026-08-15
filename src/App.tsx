@@ -95,7 +95,7 @@ export function App() {
 
       <section className="hero" id="top">
         <svg className="hero-decoration" viewBox="0 0 1200 610" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <circle className="corner-disc" cx="-70" cy="-60" r="230" />
+          <circle className="corner-disc" cx="-70" cy="-60" r="310" />
           <circle className="corner-ring" cx="1110" cy="670" r="430" />
         </svg>
         <a className="hero-brand" href="#top" aria-label={t.title}>
