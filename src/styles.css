@@ -108,7 +108,7 @@ footer { padding: 27px 12px 10px; border-top: 1px solid var(--line); color: var(
 .access-screen { min-height: 670px; padding: 24px 0 54px; }
 .back-button { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; border: 0; padding: 10px 2px; color: var(--blue-dark); background: transparent; font-weight: 900; cursor: pointer; }
 .access-card { position: relative; width: min(620px, 100%); margin: 0 auto; overflow: hidden; border: 1px solid var(--line); border-radius: 30px; padding: 42px; background: var(--surface); box-shadow: var(--shadow); }
-.access-card::after { content: ""; position: absolute; z-index: 0; width: 300px; height: 300px; right: -205px; bottom: -200px; border: 48px solid rgba(36, 168, 223, .22); border-radius: 50%; pointer-events: none; }
+.access-card::after { content: ""; position: absolute; z-index: 0; width: 320px; height: 320px; right: -215px; bottom: -210px; border: 76px solid #24a8df; border-radius: 50%; pointer-events: none; }
 .access-card > * { position: relative; z-index: 1; }
 .access-heading-icon { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 18px; color: #1768b5; background: #dcf2fb; }
 .access-card h1 { margin: 22px 0 10px; color: #24517d; font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1; letter-spacing: -.045em; }
@@ -116,6 +116,7 @@ footer { padding: 27px 12px 10px; border-top: 1px solid var(--line); color: var(
 .access-form { display: grid; gap: 18px; }
 .access-form label { display: grid; gap: 8px; color: var(--ink); font-size: .87rem; font-weight: 900; }
 .access-form input, .access-form select { width: 100%; min-height: 50px; border: 1px solid var(--line); border-radius: 13px; padding: 10px 14px; color: var(--ink); background: var(--surface-solid); font: inherit; }
+.access-form textarea { width: 100%; resize: vertical; border: 1px solid var(--line); border-radius: 13px; padding: 12px 14px; color: var(--ink); background: var(--surface-solid); font: inherit; }
 .access-form input:focus, .access-form select:focus { outline: 3px solid rgba(14, 165, 233, .18); border-color: #55b5e1; }
 .code-input { text-align: center; font-size: 1.35rem !important; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
 .primary-action { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 14px; padding: 12px 18px; color: #fff; background: linear-gradient(135deg, #1aa1ce, #2665d3); font-weight: 900; cursor: pointer; }
@@ -123,11 +124,49 @@ footer { padding: 27px 12px 10px; border-top: 1px solid var(--line); color: var(
 .setup-note, .form-message { margin: 0 !important; border-radius: 12px; padding: 12px 14px; font-size: .84rem !important; line-height: 1.45 !important; }
 .setup-note { color: #24517d !important; background: rgba(72, 169, 220, .12); }
 .form-message { color: var(--ink) !important; background: rgba(37, 99, 235, .1); }
+.teacher-dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
+.teacher-dashboard-grid article { display: flex; min-height: 112px; align-items: flex-start; gap: 13px; border: 1px solid var(--line); border-radius: 18px; padding: 18px; color: #1f70b9; background: var(--surface-solid); }
+.teacher-dashboard-grid article div { display: grid; gap: 6px; }
+.teacher-dashboard-grid strong { color: var(--ink); font-size: 1rem; }
+.teacher-dashboard-grid span { color: var(--muted); font-size: .84rem; line-height: 1.4; }
 .session-confirmed { display: flex; align-items: center; gap: 12px; border: 1px solid #a9d9ee; border-radius: 15px; padding: 14px; color: #1768b5; background: rgba(128, 211, 238, .12); }
 .session-confirmed div { display: grid; gap: 3px; }
 .session-confirmed small { color: var(--muted); font-weight: 800; }
 .session-confirmed strong { color: var(--ink); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.teacher-workspace { display: grid; gap: 18px; }
+.teacher-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.compact-action { min-height: 44px; }
+.secondary-action { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--line); border-radius: 13px; padding: 10px 14px; color: var(--ink); background: var(--surface-solid); font-weight: 850; cursor: pointer; }
+.create-lesson-form { border: 1px solid var(--line); border-radius: 18px; padding: 18px; background: color-mix(in srgb, var(--blue) 5%, var(--surface-solid)); }
+.lesson-list { display: grid; gap: 10px; }
+.lesson-list-heading { display: flex; align-items: center; justify-content: space-between; }
+.lesson-list-heading h2 { margin: 0; font-size: 1.2rem; }
+.lesson-list-heading span { display: grid; min-width: 30px; height: 30px; place-items: center; border-radius: 999px; color: var(--blue-dark); background: color-mix(in srgb, var(--blue) 13%, transparent); font-weight: 900; }
+.lesson-row { display: grid; width: 100%; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 15px; padding: 14px; color: var(--blue-dark); background: var(--surface-solid); text-align: left; cursor: pointer; }
+.lesson-row:hover { border-color: #83c9e8; transform: translateY(-1px); }
+.lesson-row div { display: grid; gap: 4px; }
+.lesson-row strong { color: var(--ink); }
+.lesson-row span, .empty-state { color: var(--muted); font-size: .84rem; }
+.empty-state { margin: 0; border: 1px dashed var(--line); border-radius: 15px; padding: 20px; text-align: center; }
+.lesson-editor-heading { display: flex; align-items: center; gap: 16px; }
+.lesson-editor-heading div { display: grid; gap: 2px; }
+.lesson-editor-heading small { color: var(--muted); font-weight: 800; }
+.lesson-editor-heading h2, .source-uploader h3 { margin: 0; }
+.source-uploader, .stored-files { display: grid; gap: 14px; border: 1px solid var(--line); border-radius: 20px; padding: 20px; background: var(--surface-solid); }
+.source-uploader-heading { display: flex; align-items: flex-start; gap: 12px; color: var(--blue-dark); }
+.source-uploader-heading div { display: grid; gap: 6px; }
+.source-uploader-heading p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.5; }
+.file-picker { display: flex !important; min-height: 96px; align-items: center; justify-content: center; gap: 9px !important; border: 2px dashed #8fcbe7; border-radius: 16px; color: var(--blue-dark) !important; background: color-mix(in srgb, var(--blue) 6%, var(--surface-solid)); cursor: pointer; }
+.file-picker input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+.pending-files, .stored-files { display: grid; gap: 9px; }
+.pending-files-title { display: flex; justify-content: space-between; color: var(--ink); font-size: .88rem; }
+.source-file-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 13px; padding: 11px 12px; color: var(--blue-dark); background: color-mix(in srgb, var(--blue) 3%, var(--surface-solid)); }
+.source-file-row div { display: grid; min-width: 0; gap: 3px; }
+.source-file-row strong { overflow: hidden; color: var(--ink); font-size: .86rem; text-overflow: ellipsis; white-space: nowrap; }
+.source-file-row span { color: var(--muted); font-size: .75rem; }
+.source-file-row button { display: grid; width: 34px; height: 34px; place-items: center; border: 0; border-radius: 10px; color: var(--muted); background: transparent; cursor: pointer; }
+.source-file-row button:hover { color: #c2414d; background: rgba(239, 68, 68, .1); }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding: 126px 40px 62px; }
@@ -154,6 +193,7 @@ footer { padding: 27px 12px 10px; border-top: 1px solid var(--line); color: var(
   .module-card { min-height: 160px; }
   .access-screen { padding-top: 8px; }
   .access-card { padding: 28px 20px; border-radius: 24px; }
+  .teacher-dashboard-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
 
